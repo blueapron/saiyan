@@ -1,6 +1,7 @@
 require "./saiyan/*"
 require "kemal"
 require "json"
+require "http/client"
 
 get "/" do
   "Hello World!"
@@ -23,9 +24,29 @@ post "/convert" do |env|
   { "data": serializer.to_json_api }.to_json
 end
 
-def convert_to_json_api(json)
-  return json if json.empty?
-  results = Hash(String, Hash(String, JSON::Type)).new
+get "/multi" do |env|
+  ch = Channel(Nil).new
+
+  result = Hash(String, String).new
+
+  urls = {
+    "apple" => "https",
+    "google" => "https",
+    "blueapron" => "https",
+    "nytimes" => "http"
+  }
+
+  urls.each do |domain, protocol|
+    spawn do
+      response = HTTP::Client.get "#{protocol}://www.#{domain}.com"
+      result[domain] = response.body
+      ch.send(nil)
+    end
+  end
+
+  urls.size.times { ch.receive }
+
+  result.to_json
 end
 
 Kemal.run
