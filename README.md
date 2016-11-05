@@ -1,31 +1,26 @@
 # saiyan
 
-TODO: Write a description here
+The strongest and fastest API gateway in the universe.
 
-## Installation
+## Getting started - The Docker way
 
+```bash
+make build
+make up
+```
 
-TODO: Write installation instructions here
+## Getting started - The straight up way
 
+Install crystal:
+```bash
+brew update
+brew install crystal-lang
+```
 
-## Usage
+Then check out the codez, and from the root directory of the codez:
+```bash
+shards install
+crystal build --release src/saiyan.cr
+./saiyan
 
-
-
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
-
-## Contributing
-
-1. Fork it ( https://github.com/[your-github-name]/saiyan/fork )
-2. Create your feature branch (git checkout -b my-new-feature)
-3. Commit your changes (git commit -am 'Add some feature')
-4. Push to the branch (git push origin my-new-feature)
-5. Create a new Pull Request
-
-## Contributors
-
-- [[your-github-name]](https://github.com/[your-github-name]) Travis Hunter - creator, maintainer
+```
