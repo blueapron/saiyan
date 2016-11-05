@@ -1,6 +1,6 @@
 FROM crystallang/crystal
 
-MAINTAINER "Blue Apron Engineering <engineering@blueapron.com>"
+MAINTAINER "Me"
 
 RUN mkdir -p /opt/saiyan/bin
 WORKDIR /opt/saiyan/

@@ -24,8 +24,8 @@ ssh:
 build:
 	docker build \
 		--build-arg GIT_COMMIT=${GIT_COMMIT} \
-		-t blueapron/saiyan:latest \
-		-t blueapron/saiyan:${GIT_COMMIT} \
+		-t saiyan:latest \
+		-t saiyan:${GIT_COMMIT} \
 		.
 
 ##################################

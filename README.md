@@ -9,7 +9,7 @@ make build
 make up
 ```
 
-## Getting started - The straight up way
+## Getting started - The old fashioned way
 
 Install crystal:
 ```bash
