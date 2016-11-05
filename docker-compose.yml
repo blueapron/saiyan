@@ -1,0 +1,11 @@
+version: '2'
+services:
+  saiyan:
+    image: blueapron/saiyan
+    command: saiyan
+    environment:
+      - PORT=3000
+    networks:
+      default:
+        aliases:
+          - saiyan.local

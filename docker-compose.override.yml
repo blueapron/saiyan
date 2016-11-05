@@ -1,0 +1,8 @@
+version: '2'
+services:
+  saiyan:
+    ports:
+      - "3000:3000"
+    extends:
+      file: docker-compose.mounts.yml
+      service: saiyan
